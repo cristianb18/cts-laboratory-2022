@@ -5,7 +5,7 @@ public class Account {
 	public int	daysActive,account_Type;
 	public static final int	STANDARD=0,BUDGET=1,PREMIUM=2,SUPER_PREMIUM=3;
 	
-	public double loan() {
+	public double getLoan() {
 		System.out.println("The loan value is " + this.loan_value);
 		return loan_value;
 	}
@@ -43,11 +43,10 @@ public class Account {
 	double totalFee=0.0;
 	Account	account;
 	int temp = 365;
-	for	(int	i=0;i<accounts.length;i++)	{
+	for	(int i=0;i<accounts.length;i++)	{
 	account=accounts[i];
 	if(account.account_Type==Account.PREMIUM||account.account_Type==Account.SUPER_PREMIUM)	
-	totalFee+=.0125	*	(	//	1.25%	broker's	fee
-			account.loan_value*Math.pow(account.rate,(account.daysActive/365)) - account.loan_value);	//	interest-principal
+	totalFee+=.0125	*	(account.loan_value*Math.pow(account.rate,(account.daysActive/365)) - account.loan_value);	//	interest-principal
 	}
 	return	totalFee;
 	}
