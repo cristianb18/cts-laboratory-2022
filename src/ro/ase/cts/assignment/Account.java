@@ -3,9 +3,9 @@ package ro.ase.cts.assignment;
 import ro.ase.cts.assignment.exceptions.ValueException;
 
 public class Account {
-	public double	loan_value,rate;	
-	public int	daysActive,account_Type;
-	public static final int	STANDARD=0,BUDGET=1,PREMIUM=2,SUPER_PREMIUM=3;
+	private double	loan_value,rate;	
+	private int	daysActive,account_Type;
+	private static final int STANDARD=0,BUDGET=1,PREMIUM=2,SUPER_PREMIUM=3;
 	
 	public double getLoan() {
 		System.out.println("The loan value is " + this.loan_value);
