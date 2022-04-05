@@ -31,7 +31,8 @@ public class Account {
 		}
 	}
 	
-	public String to_string() {
+	@Override
+	public String toString() {
 		return "Loan: "+this.loan_value+"; rate: "+this.rate+"; days active:"+daysActive+"; Type: "+account_Type+";";
 	}
 	
@@ -54,12 +55,7 @@ public class Account {
 	}
 
 	public Account(double value, double rate, int account_Type) throws Exception {
-		if(value<0)
-			throw new ValueException("Value is too small");
-		else
-		{
-			loan_value = value;
-		}
+		setValue(value);
 		this.rate = rate;
 		this.account_Type = account_Type;
 	}
