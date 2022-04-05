@@ -43,7 +43,6 @@ public class Account {
 	}
 	
 	public void print() {
-		int vb = 10;
 		System.out.println("This is an account");
 	}
 
@@ -51,7 +50,6 @@ public class Account {
 	{
 		double totalFee=0.0;
 		Account	account;
-		int temp = 365;
 		for	(int i=0;i<accounts.length;i++)	{
 				account=accounts[i];
 				if(account.account_Type==Account.PREMIUM||account.account_Type==Account.SUPER_PREMIUM)	
