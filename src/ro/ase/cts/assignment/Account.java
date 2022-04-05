@@ -1,5 +1,7 @@
 package ro.ase.cts.assignment;
 
+import ro.ase.cts.assignment.exceptions.ValueException;
+
 public class Account {
 	public double	loan_value,rate;	
 	public int	daysActive,account_Type;
@@ -22,7 +24,7 @@ public class Account {
 	
 	public void setValue(double value) throws Exception {
 		if(value<0)
-			throw new Exception();
+			throw new ValueException("Value is too small");
 		else
 		{
 			loan_value = value;
@@ -40,20 +42,20 @@ public class Account {
 
 	public static double calculate(Account[] accounts)
 	{
-	double totalFee=0.0;
-	Account	account;
-	int temp = 365;
-	for	(int i=0;i<accounts.length;i++)	{
-	account=accounts[i];
-	if(account.account_Type==Account.PREMIUM||account.account_Type==Account.SUPER_PREMIUM)	
-	totalFee+=.0125	*	(account.loan_value*Math.pow(account.rate,(account.daysActive/365)) - account.loan_value);	//	interest-principal
-	}
-	return	totalFee;
+		double totalFee=0.0;
+		Account	account;
+		int temp = 365;
+		for	(int i=0;i<accounts.length;i++)	{
+				account=accounts[i];
+				if(account.account_Type==Account.PREMIUM||account.account_Type==Account.SUPER_PREMIUM)	
+					totalFee+=.0125	* (account.loan_value*Math.pow(account.rate,(account.daysActive/365)) - account.loan_value);	//	interest-principal
+		}
+		return	totalFee;
 	}
 
 	public Account(double value, double rate, int account_Type) throws Exception {
 		if(value<0)
-			throw new Exception();
+			throw new ValueException("Value is too small");
 		else
 		{
 			loan_value = value;
