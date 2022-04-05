@@ -8,12 +8,10 @@ public class Account {
 	private static final int STANDARD=0,BUDGET=1,PREMIUM=2,SUPER_PREMIUM=3;
 	
 	public double getLoan() {
-		System.out.println("The loan value is " + this.loan_value);
 		return loan_value;
 	}
 	
 	public double getRate() {
-		System.out.println("The rate is "+rate);
 		return this.rate;
 	}
 	
@@ -29,6 +27,14 @@ public class Account {
 		{
 			loan_value = value;
 		}
+	}
+	
+	public void printLoan() {
+		System.out.println("The loan value is " + this.loan_value);
+	}
+	
+	public void printRate() {
+		System.out.println("The rate is "+rate);	
 	}
 	
 	@Override
