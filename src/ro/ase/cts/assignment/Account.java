@@ -15,7 +15,6 @@ public class Account {
 		return this.rate;
 	}
 	
-	//must have method - the lead has requested it in all classes
 	public double getMonthlyRate() {
 		return loan_value*rate;
 	}
@@ -53,7 +52,7 @@ public class Account {
 		for	(int i=0;i<accounts.length;i++)	{
 				account=accounts[i];
 				if(account.account_Type==Account.PREMIUM||account.account_Type==Account.SUPER_PREMIUM)	
-					totalFee+=.0125	* (account.loan_value*Math.pow(account.rate,(account.daysActive/365)) - account.loan_value);	//	interest-principal
+					totalFee+=.0125	* (account.loan_value*Math.pow(account.rate,(account.daysActive/365)) - account.loan_value);
 		}
 		return	totalFee;
 	}
